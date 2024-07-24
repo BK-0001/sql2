@@ -8,12 +8,13 @@ DROP TABLE IF EXISTS users CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  email VARCHAR(50)
+  email VARCHAR(50),
+  password VARCHAR(50)
 );
 
 CREATE TABLE articles (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER, REFERENCES users(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   title VARCHAR(100),
   description TEXT,
   create_at TIMESTAMP
