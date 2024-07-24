@@ -13,7 +13,7 @@ CREATE TABLE users (
 
 CREATE TABLE articles (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  user_id INTEGER, REFERENCES users(id) ON DELETE CASCADE,
   title VARCHAR(100),
   description TEXT,
   create_at TIMESTAMP
@@ -31,4 +31,5 @@ VALUES
   (1, 'first'),
   (1, 'second'),
   (2, 'third'),
-  (3, 'fourth');
+  (3, 'fourth'),
+  (1, 'fourth');
